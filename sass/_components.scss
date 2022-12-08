@@ -133,8 +133,8 @@
 	position: absolute;
 	opacity: 0.5;
 	&--one {
-		top: 7%;
-		left: 48%;
+		top: 5%;
+		left: 47%;
 		width: 80px;
 		transform: rotate(0deg);
 	}
@@ -154,7 +154,7 @@
 .lime-block {
 	position: absolute;
 	height: 40px;
-	width: 60%;
+	width: 50%;
 	background-color: $main-color-3;
 
 	&-left {
@@ -165,7 +165,7 @@
 	&-right {
 		top: 0;
 		right: -50px;
-		transform: skew(45deg);
+		transform: skew(-45deg);
 		z-index: 1;
 	}
 }

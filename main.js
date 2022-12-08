@@ -14,6 +14,7 @@ const specialContactBtns = document.querySelectorAll('.header__media-boxes-link'
 
 const aboutCards = document.querySelectorAll('.about-me__cards_card--first');
 const aboutCards2 = document.querySelectorAll('.about-me__cards_card--second');
+const firstBoxOptions = document.querySelectorAll('.first-box-option');
 const infoBoxOne = document.querySelector('.about-me__box__active--first');
 const infoBoxTwo = document.querySelector('.about-me__box--two__active--second');
 const closeInfoBtn = document.querySelector('.fa-circle-xmark--one');
@@ -23,14 +24,15 @@ const scrollTracker = document.querySelector('.scroll-tracker');
 const footerYear = document.querySelector('.footer__year');
 let navOpen = false;
 // ----------------------------------------------------------
-const studies =
-	'<i class="fa-solid fa-user-graduate"></i><p class="active-text">Z dobrymi wynikami ukończyłem studia inżynierskie na kierunku Inżynieria Środowiska na Uniwersytecie Przyrodniczym we Wrocławiu oraz magisterskie na Politechnice Wrocławskiej. Obrany przeze mnie kierunek studiów nauczył mnie wielu kompetencji wymaganych w zawodach o technicznych profilach.</p>';
+//
+// const studies =
+// 	'<i class="fa-solid fa-user-graduate"></i><p class="active-text">Z dobrymi wynikami ukończyłem studia inżynierskie na kierunku Inżynieria Środowiska na Uniwersytecie Przyrodniczym we Wrocławiu oraz magisterskie na Politechnice Wrocławskiej. Obrany przeze mnie kierunek studiów nauczył mnie wielu kompetencji wymaganych w zawodach o technicznych profilach.</p>';
 
-const experience =
-	'<i class="fa-solid fa-helmet-safety"></i><p class="active-text">Po uzyskaniu dyplomu (mając już pierwsze doświadczenie, zdobyte w trakcie studiów, podczas pracy w biurze projektowym), pełniłem fukcję inżyniera na budowach takich jak: <strong>Budowa drogi S5 Wrocław - Trzebnica, budowa drogi S1 Dąbrowa Górnicza - Pyrzowice, budowa Zbiornika przeciwpowodziowego Racibórz.</strong></p>';
+// const experience =
+// 	'<i class="fa-solid fa-helmet-safety"></i><p class="active-text">Po uzyskaniu dyplomu (mając już pierwsze doświadczenie, zdobyte w trakcie studiów, podczas pracy w biurze projektowym), pełniłem fukcję inżyniera na budowach takich jak: <strong>Budowa drogi S5 Wrocław - Trzebnica, budowa drogi S1 Dąbrowa Górnicza - Pyrzowice, budowa Zbiornika przeciwpowodziowego Racibórz.</strong></p>';
 
-const jobs =
-	'<i class="fa-solid fa-building"></i><p class="active-text">Przez ponad sześć lat zdobywałem doświadczenie w dużych międzynarodowych organizacjach, takich jak:<strong> Astaldi SpA, Budimex SA, LG Energy Solution sp. z o.o. </strong></p>';
+// const jobs =
+// 	'<i class="fa-solid fa-building"></i><p class="active-text">Przez ponad sześć lat zdobywałem doświadczenie w dużych międzynarodowych organizacjach, takich jak:<strong> Astaldi SpA, Budimex SA, LG Energy Solution sp. z o.o. </strong></p>';
 
 const grow =
 	'<i class="fa-solid fa-arrow-up-right-dots"></i><p class="active-text">Z czasem zacząłem jednak coraz bardziej interesować się bardziej innowacyjnymi zawodami i szybko oraz skutecznie uczyłem się nowych technologii z branży IT</p>';
@@ -121,20 +123,28 @@ const changeMenuPosition = () => {
 	}
 };
 
-const showInfo = e => {
+// WAŻNE: showInfo sposób pierwszy (onclick)
+
+const showInfo = id => {
 	infoBoxOne.classList.add('visible');
 	closeInfoBtn.classList.add('visible');
-	if (e.target.textContent.toLowerCase().includes('studia')) {
-		infoBoxOne.innerHTML = `${studies}`;
-	} else if (e.target.textContent.toLowerCase().includes('doświadczenie')) {
-		infoBoxOne.innerHTML = `${experience}`;
-	} else if (e.target.textContent.toLowerCase().includes('firma')) {
-		infoBoxOne.innerHTML = `${jobs}`;
-	}
+
+	firstBoxOptions.forEach(option => (option.style.display = 'none'));
+	aboutCards.forEach(card => card.classList.remove('about-me__cards_card--active'));
+
+	document.getElementById(id).style.display = 'flex';
+
+	const currentActiveCard = document.querySelector(`[data-id=${id}]`);
+	currentActiveCard.classList.add('about-me__cards_card--active');
 };
+
+// WAŻNE: showInfo2 sposób drugi (listener)
+
 const showInfo2 = e => {
 	infoBoxTwo.classList.add('visible');
 	closeInfoBtn2.classList.add('visible');
+	aboutCards2.forEach(card => card.classList.remove('about-me__cards_card--active2'));
+
 	if (e.target.textContent.toLowerCase().includes('innowacyjny')) {
 		infoBoxTwo.innerHTML = `${grow}`;
 	} else if (e.target.textContent.toLowerCase().includes('kompetencje')) {
@@ -142,14 +152,17 @@ const showInfo2 = e => {
 	} else if (e.target.textContent.toLowerCase().includes('pasja')) {
 		infoBoxTwo.innerHTML = `${fun}`;
 	}
+	e.target.closest('div').classList.add('about-me__cards_card--active2');
 };
 const closeInfo = () => {
 	infoBoxOne.classList.remove('visible');
 	closeInfoBtn.classList.remove('visible');
+	aboutCards.forEach(card => card.classList.remove('about-me__cards_card--active'));
 };
 const closeInfo2 = () => {
 	infoBoxTwo.classList.remove('visible');
 	closeInfoBtn2.classList.remove('visible');
+	aboutCards2.forEach(card => card.classList.remove('about-me__cards_card--active2'));
 };
 
 const showContact = () => {
@@ -165,6 +178,25 @@ const handleCurrentYear = () => {
 	footerYear.innerText = year;
 };
 
+const options = {
+	threshold: 1,
+};
+
+const handleCards = entries => {
+	entries.forEach(entry => {
+		entry.target.classList.toggle('show-card', entry.isIntersecting);
+		if (entry.isIntersecting) cardObserver.unobserve(entry.target)
+	});
+};
+
+const cardObserver = new IntersectionObserver(handleCards, options);
+aboutCards.forEach(card => {
+	cardObserver.observe(card);
+});
+aboutCards2.forEach(card => {
+	cardObserver.observe(card);
+});
+
 // ----------------------------------------------------------
 
 nav.addEventListener('mouseenter', navShow);
@@ -176,9 +208,9 @@ allNavItems.forEach(item => {
 allNavItems.forEach(item => {
 	item.addEventListener('click', hideContact);
 });
-aboutCards.forEach(card => {
-	card.addEventListener('click', showInfo);
-});
+// aboutCards.forEach(card => {
+// 	card.addEventListener('click', showInfo);
+// });
 aboutCards2.forEach(card => {
 	card.addEventListener('click', showInfo2);
 });
@@ -189,7 +221,7 @@ specialContactBtns.forEach(btn => {
 	btn.addEventListener('click', showContact);
 });
 
-window.addEventListener('click', e => (e.target === contactSection  ? hideContact() : false));
+window.addEventListener('click', e => (e.target === contactSection ? hideContact() : false));
 
 window.addEventListener('click', e => (e.target === contactItemsBox ? hideContact() : false));
 

@@ -79,12 +79,10 @@
     </section>
 
     <main class="main">
-
         <section class="about-me" id="about-me">
             <div class="wrapper">
-                <div class="hero-img-road">
-                </div>
-                <h2 class="section-heading">O mnie</h2>
+                <div class="hero-img-road"></div>
+                <h2 class="section-heading">Moja droga</h2>
                 <div class="about-me--first">
                     <div class="about-me__box">
                         <div class="about-me__box-img">
@@ -92,27 +90,46 @@
                                 alt="animowana postać, przedstawiająca autora strony na tle placu budowy">
                         </div>
                         <div class="about-me__box__active about-me__box__active--first">
-                            <!-- <p>Lorem ipsum dolor sit amet.</p>
-                            <p>Lorem ipsum dolor sit amet.</p>
-                            <p>Lorem ipsum dolor sit amet.</p>
-                            <p>Lorem ipsum dolor sit amet.</p>
-                            <p>Lorem ipsum dolor sit amet.</p> -->
+                            <div class="first-box-option" id="first-tab" style="display:none">
+                                <i class=" fa-solid fa-user-graduate"></i>
+                                <p class="active-text">Z dobrymi wynikami ukończyłem studia inżynierskie na kierunku
+                                    Inżynieria Środowiska na Uniwersytecie Przyrodniczym we Wrocławiu oraz magisterskie
+                                    na Politechnice Wrocławskiej. Obrany przeze mnie kierunek studiów nauczył mnie wielu
+                                    kompetencji wymaganych w zawodach o technicznych profilach.</p>
+                            </div>
+                            <div class="first-box-option" id="second-tab" style="display:none">
+                                <i class="fa-solid fa-helmet-safety"></i>
+                                <p class="active-text">Po uzyskaniu dyplomu (mając już pierwsze doświadczenie, zdobyte w
+                                    trakcie studiów, podczas pracy w biurze projektowym), pełniłem fukcję inżyniera na
+                                    budowach takich jak: <br><strong>Budowa drogi S5 Wrocław - Trzebnica</strong>,
+                                    <br><strong>Budowa drogi S1
+                                        Dąbrowa Górnicza - Pyrzowice</strong>, <br><strong>Budowa Zbiornika
+                                        przeciwpowodziowego
+                                        Racibórz.</strong>
+                                </p>
+                            </div>
+                            <div class="first-box-option" id="third-tab" style="display:none">
+                                <i class="fa-solid fa-building"></i>
+                                <p class="active-text">Przez ponad sześć lat zdobywałem doświadczenie w dużych
+                                    międzynarodowych organizacjach, takich jak: <br> <strong> Astaldi SpA, Budimex SA,
+                                        LG
+                                        Energy Solution sp. z o.o. </strong></p>
+                            </div>
                         </div>
                         <i class="fa-regular fa-circle-xmark fa-circle-xmark--one"></i>
                     </div>
                     <div class="about-me__cards">
-                        <div class="about-me__cards_card  about-me__cards_card--first about-me__cards_card--one"
-                            data-aos="fade-up-left" data-aos-duration="1000">
-                            <p>Ukończone studia wyższe na kierunku Inżynieria Środowiska</p>
+                        <div class="about-me__cards_card  about-me__cards_card--first" onclick="showInfo('first-tab')"
+                            data-id="first-tab">
+                            <p>Absolwent technicznych studiów</p>
                         </div>
-                        <div class="about-me__cards_card about-me__cards_card--first  about-me__cards_card--two"
-                            data-aos="fade-up-left" data-aos-duration="1000">
-                            <p>Sześcio letnie doświadczenie w pracy jako inżynier budowy na dużych inwestycjach
-                                infrastukturalnych</p>
+                        <div class="about-me__cards_card about-me__cards_card--first" onclick="showInfo('second-tab')"
+                            data-id="second-tab">
+                            <p>Lata doświadczenia w pracy jako inżynier</p>
                         </div>
-                        <div class="about-me__cards_card about-me__cards_card--first  about-me__cards_card--three"
-                            data-aos="fade-up-left" data-aos-duration="1000">
-                            <p>Realizacja projektów w wielu miedzynarodowych firmach (Astaldi, Budimex, LG ES)</p>
+                        <div class="about-me__cards_card about-me__cards_card--first" onclick="showInfo('third-tab')"
+                            data-id="third-tab">
+                            <p>doswiadczenie miedzynarodowych korporacjach</p>
                         </div>
                     </div>
                 </div>
@@ -133,103 +150,132 @@
                         <i class="fa-regular fa-circle-xmark fa-circle-xmark--two"></i>
                     </div>
                     <div class="about-me__cards--two">
-                        <div class="about-me__cards_card  about-me__cards_card--second about-me__cards_card--one"
-                            data-aos="fade-up-right" data-aos-duration="1000">
+                        <div class="about-me__cards_card  about-me__cards_card--second about-me__cards_card--one">
                             <p>Chęć realizacji w innowacyjnym zawodzie</p>
                         </div>
-                        <div class="about-me__cards_card about-me__cards_card--second  about-me__cards_card--two"
-                            data-aos="fade-up-right" data-aos-duration="1000">
+                        <div class="about-me__cards_card about-me__cards_card--second  about-me__cards_card--two">
                             <p>Wykształcenie na kierunku ścisłym oraz nabyte kompetencje</p>
                         </div>
-                        <div class="about-me__cards_card about-me__cards_card--second  about-me__cards_card--three"
-                            data-aos="fade-up-right" data-aos-duration="1000">
+                        <div class="about-me__cards_card about-me__cards_card--second  about-me__cards_card--three">
                             <p>Odryta pasja i chęć ciągłej nauki oraz poszerzania wiedzy</p>
                         </div>
                     </div>
                 </div>
 
             </div>
-            <img src="./img/icons/activity (2).svg" class="about-me-icon about-me-icon--one" alt="">
+            <!-- <img src="./img/icons/activity (2).svg" class="about-me-icon about-me-icon--one" alt=""> -->
         </section>
 
         <section class="projects" id="projects">
+            <!-- <div class="lime-block lime-block-right"></div> -->
             <div class="wrapper-odd">
                 <h2 class="section-heading">Projekty</h2>
-                <div class="lime-block lime-block-right"></div>
                 <div class="space"></div>
 
                 <div class="projects__hero-img">
                     <div class="projects__hero-img-shadow"></div>
                     <div class="projects__hero-img-text">
+                        <p>Poniżej znajdują się zaprojektowane i wykonane przeze mnie w całości, strony internetowe oraz
+                            aplikacje. Do ich budowy wykorzystałem umiejętności, na które składało się budowanie
+                            semantycznej i poprawnej struktury HTML + stylowanie przy użyciu preprocesora CSS (SASS),
+                            zgodnie z metodologią BEM oraz zapewnieniem pełnej responsywności, kierując się zasadą
+                            "mobile first" + wprowadzanie funkcjonalności za pomocą JS ES6 + w przypadku aplikacji
+                            webowych - tworzenie interfejsów UI przy pomocy biblioteki React. Ponadto do optymalizacji
+                            kodu pisanych stron wykorzystywany był Gulp. Całość powstawała przy użyciu edytora VSCode.
+                        </p>
                     </div>
                 </div>
                 <div class="projects__hero-img2">
                 </div>
 
                 <div class="projects__box">
-                    <div class="projects__info-box projects__info-box--one" data-aos="zoom-in-right"
-                        data-aos-duration="1000">
-                        <div class="projects__info-box__photo one"></div>
+                    <div class="projects__info-box projects__info-box--one">
                         <div class="projects__info-box__text">
-                            <h3>Nauka</h3>
-                            <p>W trakcie nauki zdobyłem wiedzę z zakresu zaawansowanego HTML5 i CSS3 w tym Flexbox,
-                                Grid, BEM & SASS, RWD oraz JavaScript. Efekt nauki można zobaczyć obok.</p>
+                            <h3>STRONA INTERNETOWA GABINET PSYCHOTERAPII</h3>
+                            <p>W pełni responsywna, napisana od postaw strona internetowa, przeznaczona do komercyjnego
+                                użytku. Została wykonana przy użyciu Vanilla JS, SCSS (7 - 1), CSS Flexbox i Gulp</p>
+                            <p>Tech: HTML, SASS, JS, NPM, GULP</p>
+                            <div class="btn-box">
+                                <button><a href="https://grave-dave.github.io/Kasia/" target="_blank">live <i class="fa-solid fa-eye"></i></a> </button>
+                                <button><a href="https://github.com/Grave-Dave/Kasia" target="_blank">repo <i class="fa-brands fa-github"></i></a> </button>
+                            </div>
                         </div>
                     </div>
                     <div class="projects__project-box projects__project-box--one">
                         <div class="projects__project-box__photo one"></div>
-                        <div class="projects__project-box__text">
-                            <h3>Nazwa projektu</h3>
-                            <p>Opis: Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, culpa.</p>
-                            <p>Technologie: Lorem ipsum dolor sit amet.</p>
+                        <div class="projects__project-box__mobile one">
+
                         </div>
                     </div>
-                    <div class="projects__info-box projects__info-box--two" data-aos="flip-up" data-aos-duration="1000">
-                        <div class="projects__info-box__photo two"></div>
+                    <div class="projects__info-box projects__info-box--two">
                         <div class="projects__info-box__text">
-                            <h3>Praktyka</h3>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit laboriosam
-                                ducimus,
-                                consectetur
-                                ut laudantium non teonetur ipsa labore dolore sapiente?</p>
+                            <h3>STRONA INTERNETOWA YOUR PERSONAL TRAINER </h3>
+                            <p>Kolejna napisana od podstaw, responsywna strona internetowa. Wykonana przy użyciu Vanilla
+                                JS oraz SCSS. Strona wykorzystuje funkcjonalności, takie jak m.in. Intersection
+                                Observer, API, Scroll Drawing i wiele innych. Przekonaj się sam:</p>
+                            <p>Tech: HTML, SASS, JS, NPM, GULP</p>
+                            <div class="btn-box">
+                                <button><a href="https://grave-dave.github.io/YourPersonalTrainer/" target="_blank">live <i class="fa-solid fa-eye"></i></a></button>
+                                <button><a href="https://github.com/Grave-Dave/YourPersonalTrainer" target="_blank">repo <i class="fa-brands fa-github"></i></a></button>
+                            </div>
                         </div>
                     </div>
                     <div class="projects__project-box projects__project-box--two">
                         <div class="projects__project-box__photo two"></div>
-                        <div class="projects__project-box__text two">
-                            <h3>Nazwa projektu</h3>
-                            <p>Opis: Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, culpa.</p>
-                            <p>Technologie: Lorem ipsum dolor sit amet.</p>
+                        <div class="projects__project-box__mobile two">
+
                         </div>
                     </div>
-                    <div class="projects__info-box projects__info-box--three" data-aos="zoom-in-left"
-                        data-aos-duration="1000">
-                        <div class="projects__info-box__photo three"></div>
+                    <div class="projects__info-box projects__info-box--three">
                         <div class="projects__info-box__text">
-                            <h3>Znajomość technologii i narzędzi</h3>
-                            <p>Sprawnie korzystam z narzędzi takich jak <strong>VSC, Github, Git, NPM, GULP</strong>
-                                oraz technologii, do których należą <strong>HTML5, CSS3, Sass, Bootstrap, JavaScript,
-                                    oraz React.</strong></p>
+                            <h3>Quizzical</h3>
+                            <p>Aplikacja internetowa napisana w pełni samodzielnie przy użyciu biblioteki React, w
+                                ramach projektu końcowego modułu React z kursu Frontend Developer Path, platformy
+                                szkoleniowej Scrimba. Aplikacja pozwala na spróbowanie swoich sił w quizie z zakresu
+                                wiedzy ogólnej, poprzez udzielanie odpowiedzi na pytania jednokrotnego wyboru, które
+                                pobierane są z API. Aplikacja wykorzystuje hooki useState i useEffect, API oraz
+                                zbudowana jest komponentów renderowanych warunkowo.</p>
+                            <p>Tech: React.js, VITE, JS in JSX, SASS, CSS in JS, NPM</p>
+                            <div class="btn-box">
+                                <button><a href="https://my-super-quizz-app.netlify.app" target="_blank">live <i class="fa-solid fa-eye"></i></a> </button>
+                                <button><a href="https://github.com/Grave-Dave/Quizzlet" target="_blank">repo <i class="fa-brands fa-github"></i></a> </button>
+                            </div>
                         </div>
                     </div>
                     <div class="projects__project-box projects__project-box--three">
                         <div class="projects__project-box__photo three"></div>
-                        <div class="projects__project-box__text">
-                            <h3>Nazwa projektu</h3>
-                            <p>Opis: Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, culpa.</p>
-                            <p>Technologie: Lorem ipsum dolor sit amet.</p>
+                        <div class="projects__project-box__mobile three">
+
                         </div>
                     </div>
                     <div class="projects__info-box projects__info-box--four">
-                        <a href="#contact" class="header__btn btn-special-animation hire-button">Zatrudnij mnie!</a>
+                        <!-- <div class="projects__info-box__photo three"></div> -->
+                        <div class="projects__info-box__text">
+                            <h3>ANOTHER WEBSITE / APP </h3>
+                            <p>under maintenance</p>
+                            <!-- <p>Tech:</p> -->
+                            <div class="btn-box">
+                                <button><a href="#projects">live <i class="fa-solid fa-eye"></i></a> </button>
+                                <button><a href="#projects">repo <i class="fa-brands fa-github"></i></a> </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="projects__project-box projects__project-box--four">
+                        <div class="projects__project-box__photo four"></div>
+                        <div class="projects__project-box__mobile four">
+
+                        </div>
+                    </div>
+                    <div class="projects__info-box projects__info-box--five">
+                        <a href="#contact" class="header__btn btn-special-animation hire-button">Skontaktuj się</a>
                     </div>
                 </div>
-                <img src="./img/icons/activity (2).svg" class="projects-icon projects-icon--one" alt="">
+                <!-- <img src="./img/icons/activity (2).svg" class="projects-icon projects-icon--one" alt=""> -->
                 <img src="./img/icons/html5.svg" class="header-icon header-icon--html" alt="">
                 <img src="./img/icons/css3-alt.svg" class="header-icon header-icon--css" alt="">
                 <img src="./img/icons/square-js.svg" class="header-icon header-icon--js" alt="">
                 <img src="./img/icons/react.svg" class="header-icon header-icon--react" alt="">
-                <div class="lime-block lime-block-left"></div>
+                <!-- <div class="lime-block lime-block-left"></div> -->
         </section>
         <section class="contact" id="contact">
             <h2 class="section-heading">Kontakt</h2>
@@ -237,24 +283,26 @@
 
             <div class="contact__items">
                 <h2 class="conatct__item"><i class="fa-solid fa-phone"></i> Telefon</h2>
-                <p>+48 000-000-000</p>
+                <a class='item-link' href="tel:+48 660 945 336">+48 660 945 336</a>
 
                 <h2 class="conatct__item"><i class="fa-regular fa-envelope"></i> E-mail</h2>
-                <p>mail@gmail.com</p>
+                <a class='item-link' href="mailto:dawgrab1@gmail.com">dawgrab1@gmail.com</a>
 
                 <h2 class="conatct__item"><i class="fa-brands fa-linkedin"></i> Linked-in</h2>
-                <p><a href="#" target="_blank">linkedin.com/in/person</a></p>
+                <a class='item-link' href="http://linkedin.com/in/dawid-grabarz"
+                    target="_blank">linkedin.com/in/dawid-grabarz</a>
             </div>
             <div class="porfolio__items">
                 <div>
-                    <h2 class="conatct__item"><i class="fa-solid fa-cloud-arrow-down"></i> CV</h2>
-                    <p></p>
-                </div>
+                    <h2 class="conatct__item"><a
+                            href="https://drive.google.com/file/d/14Z8w1GAEqReDCZWzA3tAcsOXkrMKCU5Z/view?usp=sharing"
+                            target="_blank"><i class="fa-solid fa-cloud-arrow-down"></i> CV</a></h2>
 
+                </div>
                 <div>
-                    <h2 class="conatct__item"><i class="fa-brands fa-github"></i><a href="#" target="_blank"> Github</a>
+                    <h2 class="conatct__item"><i class="fa-brands fa-github"></i><a href="https://github.com/Grave-Dave"
+                            target="_blank"> Github</a>
                     </h2>
-                    <p></p>
                 </div>
 
             </div>

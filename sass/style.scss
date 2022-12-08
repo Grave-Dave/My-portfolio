@@ -77,10 +77,13 @@ nav {
 	margin: 0 auto;
 	padding: 30px;
 	width: 100%;
-	max-width: 1400px;
+	// max-width: 1400px;
 	height: 100vh;
 	text-align: center;
-	background-color: $main-color;
+	background-image: url('../img/sun-tornado.png');
+	background-size: cover;
+	background-attachment: fixed;
+
 	&__heading {
 		display: flex;
 		flex-direction: column;
@@ -199,12 +202,12 @@ nav {
 		&-link {
 			padding: 1em;
 			text-decoration: none;
-			color: $main-color-3;
+			color: $white-color;
 			font-size: 4.5rem;
 			transition: transform 0.4s, color 0.4ms;
 		}
 		&-link:hover {
-			transform: scale(0.8);
+			transform: scale(0.9);
 			color: $main-color-4;
 		}
 	}
@@ -246,7 +249,7 @@ nav {
 		}
 		.hero-img-road {
 			position: absolute;
-			top: 80px;
+			top: 90px;
 			right: 0px;
 			width: 300px;
 			background-image: url(../img/droga.png);
@@ -264,10 +267,11 @@ nav {
 		display: grid;
 		grid-template-rows: repeat(3, 1fr);
 		grid-template-columns: repeat(4, 1fr);
+		margin-bottom: 100px;
 	}
 	&__box {
 		grid-row: 1/4;
-		grid-column: 1/3;
+		grid-column: 3/5;
 		position: relative;
 		.fa-circle-xmark {
 			@include fa-circle-xmark;
@@ -296,44 +300,55 @@ nav {
 	&__cards,
 	&__cards--two {
 		grid-row: 1/4;
-		grid-column: 3/5;
+		grid-column: 1/3;
 		display: flex;
 		flex-direction: column;
-		align-items: center;
+		align-items: flex-start;
 		justify-content: space-evenly;
 		padding: 2em;
 
 		&_card {
 			width: 40%;
-			padding: 1em;
+			padding: 2em;
 			margin: 1em;
-			border-radius: 5px;
-			box-shadow: 3px 3px 5px #000;
-			background-image: linear-gradient(40deg, $main-color 30%, $main-color-2 100%);
+			border-radius: 25px;
+			border: 2px solid $main-color;
+			box-shadow: 0px 0px 5px #000;
+			background-color: $main-color-2;
 			font-size: 1.4rem;
+			font-weight: 700;
 			font-family: 'Montserrat', sans-serif;
 			text-transform: uppercase;
 			text-align: center;
 			letter-spacing: 1px;
 			color: $white-color;
-			transition: transform 0.4s, background-image 0.4s;
+			transition: transform 0.4s, background-color 0.4s, box-shadow 0.4s, opacity 1s, filter 1s;
+			filter: blur(10px);
+			opacity: 0;
 			cursor: pointer;
-			&--one {
-				align-self: start;
+
+			&--active,
+			&--active2 {
+				background-color: $main-color-4;
+				color: $main-color;
+				box-shadow: 10px 10px 15px #000;
 			}
-			&--three {
-				align-self: end;
+			&--active {
+				transform: scale(1.1) translateX(280px);
+			}
+			&--active2 {
+				transform: scale(1.1) translateX(-280px);
 			}
 		}
 		&_card:hover {
-			transform: scale(1.2);
-			background-image: linear-gradient(40deg, $main-color-4 0%, $main-color-4 100%);
+			// transform: scale(1.1);
+			background-color: $main-color-4;
 			color: $main-color;
 		}
 	}
 	&__box--two {
 		grid-row: 1/4;
-		grid-column: 3/5;
+		grid-column: 1/3;
 		position: relative;
 		.fa-circle-xmark {
 			@include fa-circle-xmark;
@@ -353,13 +368,14 @@ nav {
 		}
 	}
 
-	&__cards--two {
-		grid-column: 1/3;
-		&_card--one {
-			align-self: end;
+	&__cards {
+		&--two {
+			grid-column: 3/5;
 		}
+		&_card--one,
+		&_card--two,
 		&_card--three {
-			align-self: start;
+			align-self: end;
 		}
 	}
 
@@ -385,11 +401,17 @@ nav {
 	}
 }
 
+.show-card {
+	filter: blur(0);
+	opacity: 1;
+}
+
 // ---------------------------------------------------
 
 .projects {
 	position: relative;
-	overflow: hidden;
+	background-color: $main-color;
+	// overflow: hidden;
 	h2 {
 		position: absolute;
 		top: 50px;
@@ -414,22 +436,33 @@ nav {
 			background-color: rgba(0, 0, 0, 0.8);
 			z-index: -1;
 		}
+		&-text {
+			position: absolute;
+			top: 40%;
+			padding: 0 4em;
+			text-align: center;
+			p {
+				font-size: 2rem;
+				line-height: 1.5;
+			}
+		}
 	}
 	&__hero-img2 {
 		position: absolute;
 		top: 400px;
 		left: 0;
 		background-color: rgba(0, 0, 0, 0.2);
-		height: 100%;
-		width: 40%;
+		height: calc(100% - 400px);
+		width: 50%;
 		z-index: 0;
 	}
 	&__box {
+		margin-left: 5em;
 		padding: 1em 3em;
 		display: grid;
-		// gap: 30px;
+		gap: 100px;
 		grid-template-columns: repeat(2, 1fr);
-		grid-template-rows: repeat(3, 1fr) 200px;
+		grid-template-rows: repeat(4, 1fr) 200px;
 	}
 	.space {
 		height: 450px;
@@ -460,32 +493,24 @@ nav {
 	}
 	&__info-box--four {
 		grid-row: 4/5;
+		grid-column: 1/2;
+	}
+	&__project-box--four {
+		grid-row: 4/5;
+		grid-column: 2/3;
+	}
+	&__info-box--five {
+		grid-row: 5/6;
 		grid-column: 1/3;
 	}
 	&__info-box {
 		position: relative;
-		// margin-left: 2em;
-		margin-bottom: 4em;
 		&__photo {
 			height: 500px;
 			width: 100%;
 			max-width: 590px;
 		}
-		&__photo.one {
-			background-image: url(../img/nauka.webp);
-			background-size: cover;
-			background-position: center;
-		}
-		&__photo.two {
-			background-image: url(../img/foto\ programista.webp);
-			background-size: cover;
-			background-position: center;
-		}
-		&__photo.three {
-			background-image: url(../img/238.webp);
-			background-size: cover;
-			background-position: center;
-		}
+
 		a.hire-button {
 			position: absolute;
 			top: 50%;
@@ -517,7 +542,7 @@ nav {
 			position: absolute;
 			padding: 2em;
 			width: 100%;
-			height: 50%;
+			height: 100%;
 			bottom: 0px;
 			left: 0;
 			background-color: rgba(0, 0, 0, 0.85);
@@ -532,12 +557,43 @@ nav {
 				line-height: 1.5em;
 			}
 		}
+		.btn-box {
+			display: flex;
+			justify-content: space-evenly;
+			align-items: center;
+			button {
+				padding: 1.5em 0;
+				border-radius: 10px;
+				background: none;
+				border: 1px solid #ffffff;
+				cursor: pointer;
+				transition: background-color 0.4s, border .4s;
+				a {
+					padding: 1.5em 2.5em;
+					text-decoration: none;
+					color: $white-color;
+					text-transform: uppercase;
+					font-size: 1.5rem;
+					font-weight: 700;
+					i {
+						margin-left: 0.5em;
+					}
+				}
+			}
+			button:hover {
+				border: 1px solid transparent;
+				background-color: $main-color-4;
+				a {
+					color: $main-color;
+				}
+			}
+		}
 	}
 	&__project-box {
 		position: relative;
 		margin-left: 60px;
-		width: 750px;
-		height: 500px;
+		width: 600px;
+		height: 400px;
 		perspective: 800px;
 		cursor: pointer;
 		&__photo {
@@ -546,51 +602,56 @@ nav {
 			background-position: center;
 			background-size: cover;
 			border-radius: 10px;
-			transition: 1.2s;
+			transition: 0.8s;
 			box-shadow: 0 0 15px #000;
 		}
 		&__photo.one {
-			background-image: url('../img/projects/Screenshot_1.png');
+			background-image: url('../img/projects/Psychoterapia_1.png');
 		}
 		&__photo.two {
-			background-image: url('../img/projects/Screenshot_2.png');
+			background-image: url('../img/projects/Trainer_1.png');
 		}
 		&__photo.three {
-			background-image: url('../img/projects/Screenshot_3.png');
+			background-image: url('../img/projects/react_1.png');
 		}
-		&__text {
+		&__photo.four {
+			background-image: url('../img/projects/20945385.jpg');
+		}
+		&__mobile {
 			position: absolute;
 			top: 0;
 			right: 0;
 			bottom: 0;
 			left: 0;
-			padding: 30px;
+			width: 100%;
+			height: 100%;
 			border-radius: 10px;
-			text-align: center;
-			background-image: linear-gradient(315deg, $main-color-4 0%, $main-color-3 80%);
-			transition: 1.2s;
+			background-position: center;
+			background-size: cover;
+			background-repeat: no-repeat;
+			transition: 0.8s;
 			opacity: 0;
-			color: $main-color;
-			font-size: 3rem;
 			cursor: pointer;
 			transform: rotatex(-180deg);
 			box-shadow: 0 0 15px #000;
-
-			h3 {
-				text-transform: uppercase;
-				margin-bottom: 1em;
-			}
-			p {
-				font-size: 2rem;
-				padding: 1em;
-			}
 		}
-		&__text.two {
+		&__mobile.one {
+			background-image: url('../img/projects/Psychoterapia_mobile.png');
+		}
+		&__mobile.two {
+			transform: rotateY(-180deg);
+			background-image: url('../img/projects/Trainer_mobile.png');
+		}
+		&__mobile.three {
+			background-image: url('../img/projects/react_mobile.png');
+		}
+		&__mobile.four {
+			background-image: url('../img/projects/20945385.jpg');
 			transform: rotateY(-180deg);
 		}
 	}
 	&__project-box:hover {
-		.projects__project-box__text {
+		.projects__project-box__mobile {
 			transform: rotate(0);
 			opacity: 1;
 		}
@@ -598,7 +659,8 @@ nav {
 			transform: rotatex(-180deg);
 			opacity: 0;
 		}
-		.projects__project-box__photo.two {
+		.projects__project-box__photo.two,
+		.projects__project-box__photo.four {
 			transform: rotatey(-180deg);
 		}
 	}
@@ -634,14 +696,18 @@ nav {
 	i {
 		color: $main-color-4;
 	}
-	p {
+	.item-link {
 		color: $main-color-2;
 		font-weight: bold;
 		font-size: 2rem;
 		padding: 1em 5em;
-		a {
-			color: $main-color-2;
-		}
+		text-decoration: none;
+		transition: color 0.4s, transform 0.4s;
+	}
+
+	.item-link:hover {
+		color: $main-color-4;
+		transform: scale(0.95);
 	}
 }
 
@@ -656,8 +722,7 @@ nav {
 		color: $main-color-2;
 	}
 }
-.porfolio__items,
-.contact__items {
+.porfolio__items {
 	a {
 		text-decoration: none;
 		color: $white-color;
@@ -667,7 +732,7 @@ nav {
 		cursor: pointer;
 	}
 	h2:hover {
-		transform: scale(1.1);
+		transform: scale(0.95);
 	}
 }
 
@@ -696,4 +761,11 @@ footer .content {
 
 .vertical {
 	flex-direction: column;
+}
+
+.first-box-option {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
 }
