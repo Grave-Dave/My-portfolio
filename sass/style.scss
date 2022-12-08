@@ -26,33 +26,29 @@ body {
 // ---------------------------------------------------
 nav {
 	position: fixed;
-	top: 7%;
-	left: 3%;
-	z-index: 10;
+	top: 100px;
+	left: 5%;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
 	transform: translateY(-50%);
 	z-index: 100;
-	// transition: all .8s;
+	transition: all .3s;
 	.navbar {
 		position: relative;
 		display: flex;
-		// flex-direction: row;
 		justify-content: space-around;
 		align-items: center;
 		border-radius: 100px;
 		background-color: rgba(0, 0, 0, 0.4);
-		// display: none;
 		transition: all 0.5s;
-
 		a {
 			opacity: 0.2;
-			padding: 1em 0.7em;
+			padding: 1.5em 0.7em;
 			text-decoration: none;
 			color: $main-color-4;
-			font-size: 4rem;
+			font-size: 2rem;
 			text-shadow: 0 0 10px #000;
 			transition: all 0.6s;
 			display: none;
@@ -66,38 +62,40 @@ nav {
 		}
 	}
 }
+.hamburger {
+	transform: scale(.7);
+}
 
 // ---------------------------------------------------
 
 .header {
 	position: relative;
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: repeat(4, 1fr);
-	margin: 0 auto;
-	padding: 30px;
-	width: 100%;
-	// max-width: 1400px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	justify-content: space-evenly;
+	margin: auto;
+	padding: 1em;
 	height: 100vh;
 	text-align: center;
 	background-image: url('../img/sun-tornado.png');
 	background-size: cover;
-	background-attachment: fixed;
 
 	&__heading {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+		align-items: center;
 		width: 100%;
-		grid-column: 1/3;
-		grid-row: 2/3;
+		margin-top: 2em;
+		order: 2;
 
 		h1 {
-			font-size: 5rem;
+			font-size: 1.5rem;
 			font-weight: 200;
 		}
 		h2 {
-			font-size: 3rem;
+			font-size: 1.5rem;
 			padding: 0.5em;
 			font-weight: 200;
 		}
@@ -108,24 +106,23 @@ nav {
 	}
 	&__text {
 		font-family: 'Atma', cursive;
-		padding: 0.3em;
-		font-size: 3rem;
+		padding: 0.5em;
+		font-size: 1.5rem;
 	}
 	&__btn {
+		display: none;
 		position: absolute;
-		top: 70%;
+		bottom: 0%;
 		left: 50%;
-		transform: translate(-50%, -50%);
-		display: inline-block;
+		transform: translate(-50%, -50%);		
 		padding: 1em 2em;
 		border: 1px solid $white-color;
 		border-radius: 7px;
 		text-decoration: none;
 		text-transform: uppercase;
-		font-size: 2rem;
+		font-size: 1.4rem;
 		font-weight: 700;
 		cursor: pointer;
-		// overflow: hidden;
 		&::before {
 			background-color: $main-color-4;
 		}
@@ -135,24 +132,18 @@ nav {
 		color: $white-color;
 	}
 	&__arrow {
+		display: none;
 		position: absolute;
 		bottom: 30px;
 		left: 50%;
-		font-size: 5rem;
+		font-size: 3rem;
 		transform: translate(-50%, -50%);
 	}
 	&__photo {
 		position: relative;
-		grid-column: 3/4;
-		grid-row: 1/4;
-		padding: 20px;
-		// right: 0;
-		// bottom: 50px;
-		width: 100%;
-		// min-width: 300px;
-		// max-width: 400px;
-		height: 100%;
-		// max-height: 500px;
+		padding: 2em;
+		min-width: 150px;
+		min-height: 150px;
 		border-top-left-radius: 15px;
 		border-bottom-right-radius: 15px;
 		background-image: url(../img/ja2.webp);
@@ -161,6 +152,7 @@ nav {
 		background-repeat: no-repeat;
 		box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 		overflow: hidden;
+		order: 1;
 		&-text {
 			position: absolute;
 			display: flex;
@@ -170,58 +162,53 @@ nav {
 			bottom: 0;
 			right: 0;
 			left: 0;
-			padding: 25px 30px;
+			padding: 0.5em 0.5em;
 			background-color: rgba(0, 0, 0, 0.8);
 			color: #ffffff;
 			clip-path: circle(0 at 50% 90%);
 			transition: clip-path 0.8s;
 			& h4 {
 				margin-bottom: 0.5em;
-				font-size: 1.4rem;
+				font-size: 1rem;
 			}
 			& h2 {
 				margin-bottom: 0.3em;
-				font-size: 1.8rem;
+				font-size: 1rem;
 				color: $main-color-4;
 			}
 			& p {
 				padding: 1em 1.8em;
 				line-height: 1.5em;
 				text-align: center;
-				font-size: 1.6rem;
+				font-size: 1rem;
 				font-weight: 200;
 			}
 		}
 	}
 	&__media-boxes,
 	&__contact-boxes {
+		order: 3;
 		display: flex;
 		justify-content: space-evenly;
 		align-items: center;
+		align-self: center;
 		cursor: pointer;
 		&-link {
-			padding: 1em;
+			padding: 0.5em 1em;
 			text-decoration: none;
 			color: $white-color;
-			font-size: 4.5rem;
+			font-size: 2.5rem;
 			transition: transform 0.4s, color 0.4ms;
 		}
 		&-link:hover {
 			transform: scale(0.9);
 			color: $main-color-4;
 		}
-	}
-	&__media-boxes {
-		grid-column: 3/4;
-		grid-row: 4/5;
-	}
-	&__contact-boxes {
-		grid-column: 1/2;
-		grid-row: 1/2;
-	}
+	}	
 }
 
 .header-cartoon {
+	display: none;
 	position: absolute;
 	bottom: -60px;
 	left: 150px;
@@ -230,12 +217,18 @@ nav {
 		width: 120px;
 	}
 }
+.question {
+	display: none;
+}
+.lime-block {
+	display: none;
+}
 
 // ---------------------------------------------------
 
 .about-me {
 	position: relative;
-	padding: 2em;
+	padding: 2em 5em 0;
 }
 .about-me {
 	.wrapper {
@@ -248,6 +241,7 @@ nav {
 			margin-bottom: 2em;
 		}
 		.hero-img-road {
+			display: none;
 			position: absolute;
 			top: 90px;
 			right: 0px;
@@ -264,15 +258,14 @@ nav {
 	}
 	&--first,
 	&--second {
-		display: grid;
-		grid-template-rows: repeat(3, 1fr);
-		grid-template-columns: repeat(4, 1fr);
-		margin-bottom: 100px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-bottom: 4em;
 	}
-	&__box {
-		grid-row: 1/4;
-		grid-column: 3/5;
+	&__box {		
 		position: relative;
+		margin-bottom: 3em;
 		.fa-circle-xmark {
 			@include fa-circle-xmark;
 			&--one {
@@ -286,6 +279,8 @@ nav {
 			&--first {
 				top: 0;
 				left: 0;
+				width: 100%;
+				height: 140%;
 			}
 		}
 	}
@@ -299,17 +294,15 @@ nav {
 	}
 	&__cards,
 	&__cards--two {
-		grid-row: 1/4;
-		grid-column: 1/3;
 		display: flex;
 		flex-direction: column;
-		align-items: flex-start;
+		align-items: center;
 		justify-content: space-evenly;
 		padding: 2em;
 
 		&_card {
-			width: 40%;
-			padding: 2em;
+			min-width: 250px;
+			padding: 1em;
 			margin: 1em;
 			border-radius: 25px;
 			border: 2px solid $main-color;
@@ -334,21 +327,18 @@ nav {
 				box-shadow: 10px 10px 15px #000;
 			}
 			&--active {
-				transform: scale(1.1) translateX(280px);
+				transform: scale(1.1) 
 			}
 			&--active2 {
-				transform: scale(1.1) translateX(-280px);
+				transform: scale(1.1) 
 			}
 		}
 		&_card:hover {
-			// transform: scale(1.1);
 			background-color: $main-color-4;
 			color: $main-color;
 		}
 	}
 	&__box--two {
-		grid-row: 1/4;
-		grid-column: 1/3;
 		position: relative;
 		.fa-circle-xmark {
 			@include fa-circle-xmark;
@@ -368,21 +358,10 @@ nav {
 		}
 	}
 
-	&__cards {
-		&--two {
-			grid-column: 3/5;
-		}
-		&_card--one,
-		&_card--two,
-		&_card--three {
-			align-self: end;
-		}
-	}
-
 	&__box,
 	&__box--two {
 		.active-text {
-			font-size: 2rem;
+			font-size: 1.4rem;
 			font-family: 'Atma', cursive;
 			padding: 2em;
 			text-align: center;
@@ -393,7 +372,7 @@ nav {
 		.fa-arrow-up-right-dots,
 		.fa-user-tie,
 		.fa-face-smile {
-			font-size: 5rem;
+			font-size: 3rem;
 		}
 		.fa-circle-xmark:hover {
 			transform: rotate(180deg);
@@ -411,7 +390,7 @@ nav {
 .projects {
 	position: relative;
 	background-color: $main-color;
-	// overflow: hidden;
+	overflow: hidden;
 	h2 {
 		position: absolute;
 		top: 50px;
@@ -513,7 +492,7 @@ nav {
 
 		a.hire-button {
 			position: absolute;
-			top: 50%;
+			// top: 50%;
 			left: 50%;
 			transform: translate(-50%, -50%);
 			padding: 1.5em 1.5em;
@@ -552,9 +531,14 @@ nav {
 				font-size: 2rem;
 				text-transform: uppercase;
 			}
-			p {
+			.descr,
+			.tech {
 				font-size: 1.5rem;
 				line-height: 1.5em;
+			}
+			.tech {
+				font-weight: 700;
+				letter-spacing: 1px;
 			}
 		}
 		.btn-box {
@@ -567,7 +551,7 @@ nav {
 				background: none;
 				border: 1px solid #ffffff;
 				cursor: pointer;
-				transition: background-color 0.4s, border .4s;
+				transition: background-color 0.4s, border 0.4s;
 				a {
 					padding: 1.5em 2.5em;
 					text-decoration: none;
@@ -749,7 +733,7 @@ footer .content {
 
 // ---------------------------------------------------
 
-@import './small';
+@import './media';
 
 .fa-circle-xmark {
 	opacity: 0;
