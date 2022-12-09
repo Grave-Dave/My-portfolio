@@ -152,7 +152,7 @@
 	.header {
 		&__heading {
 			margin-left: 5%;
-			max-width: 500px;
+			max-width: 400px;
 		}
 		&__photo {
 			min-width: 200px;
@@ -169,7 +169,7 @@
 
 // ------------------------------------------------------h-OK
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (orientation: portrait) {
 	.question {
 		display: block;
 	}
@@ -202,6 +202,47 @@
 				& p {
 					font-size: 1.2rem;
 				}
+			}
+		}
+	}
+	.about-me {
+		&__box {
+			&__active {
+				&--first {
+					height: 120%;
+				}
+			}
+		}
+		&__box-img img,
+		&__box-img--two img {
+			max-width: 900px;
+		}
+
+		&__cards,
+		&__cards--two {
+			&_card {
+				width: 100%;
+				max-width: 500px;
+				padding: 2em 1em;
+			}
+			&_card:hover {
+				background-color: $main-color-4;
+				color: $main-color;
+			}
+		}
+
+		&__box,
+		&__box--two {
+			.active-text {
+				font-size: 1.8rem;
+			}
+			.fa-user-graduate,
+			.fa-helmet-safety,
+			.fa-building,
+			.fa-arrow-up-right-dots,
+			.fa-user-tie,
+			.fa-face-smile {
+				font-size: 5rem;
 			}
 		}
 	}

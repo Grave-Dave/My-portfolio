@@ -77,7 +77,7 @@
 }
 .header-icon--one {
   top: 10vh;
-  left: 47%;
+  left: 25%;
   width: 80px;
   transform: rotate(0deg);
 }
@@ -1346,7 +1346,7 @@ footer .content {
 @media (min-width: 800px) and (orientation: landscape) {
   .header__heading {
     margin-left: 5%;
-    max-width: 500px;
+    max-width: 400px;
   }
   .header__photo {
     min-width: 200px;
@@ -1356,7 +1356,7 @@ footer .content {
     font-size: 3rem;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 768px) and (orientation: portrait) {
   .question {
     display: block;
   }
@@ -1389,6 +1389,37 @@ footer .content {
   }
   .header__photo-text p {
     font-size: 1.2rem;
+  }
+  .about-me__box__active--first {
+    height: 120%;
+  }
+  .about-me__box-img img, .about-me__box-img--two img {
+    max-width: 900px;
+  }
+  .about-me__cards_card, .about-me__cards--two_card {
+    width: 100%;
+    max-width: 500px;
+    padding: 2em 1em;
+  }
+  .about-me__cards_card:hover, .about-me__cards--two_card:hover {
+    background-color: #FAFFAF;
+    color: #22577E;
+  }
+  .about-me__box .active-text, .about-me__box--two .active-text {
+    font-size: 1.8rem;
+  }
+  .about-me__box .fa-user-graduate,
+.about-me__box .fa-helmet-safety,
+.about-me__box .fa-building,
+.about-me__box .fa-arrow-up-right-dots,
+.about-me__box .fa-user-tie,
+.about-me__box .fa-face-smile, .about-me__box--two .fa-user-graduate,
+.about-me__box--two .fa-helmet-safety,
+.about-me__box--two .fa-building,
+.about-me__box--two .fa-arrow-up-right-dots,
+.about-me__box--two .fa-user-tie,
+.about-me__box--two .fa-face-smile {
+    font-size: 5rem;
   }
 }
 @media (min-width: 992px) and (orientation: portrait) {
