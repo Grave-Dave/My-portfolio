@@ -1,25 +1,13 @@
-import 'https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js';
-
 const scrollTracker = document.querySelector('.scroll-tracker');
 
-// timelines--------------------------------------------
+const scrollTrack = () => {
+	const scroll = window.scrollY;
+	const height = document.body.offsetHeight - window.innerHeight;
 
-const scrollTrackingTimeline = new ScrollTimeline({
-	source: document.scrollingElement,
-	orientation: 'block',
-	scrollOffsets: [ CSS.percent(30),  CSS.percent(60)],
-});
+	let width = 100 * (scroll / height);
 
+	scrollTracker.style.width=`${width}%`
 
-// scroll-tracker----------------------------
+};
 
-scrollTracker.animate(
-	{
-		transform: ['scaleX(0)', 'scaleX(1)'],
-	},
-	{
-		duration: 1,
-		timeline: scrollTrackingTimeline,
-	}
-);
-
+window.addEventListener('scroll', scrollTrack);

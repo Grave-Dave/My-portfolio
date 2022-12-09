@@ -114,12 +114,10 @@ const navBacklight = () => {
 const changeMenuPosition = () => {
 	if (window.scrollY >= 200 && navOpen === true) {
 		nav.classList.add('vertical');
-		navSection.style.top = '320px';
-		// navSection.style.left = '7%';
+		navSection.classList.add('nav-top')
 	} else {
 		nav.classList.remove('vertical');
-		navSection.style.top = '';
-		// navSection.style.left = '10%';
+		navSection.classList.remove('nav-top')
 	}
 };
 

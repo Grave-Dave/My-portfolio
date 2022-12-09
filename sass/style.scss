@@ -26,7 +26,7 @@ body {
 // ---------------------------------------------------
 nav {
 	position: fixed;
-	top: 100px;
+	top: 50px;
 	left: 5%;
 	display: flex;
 	flex-direction: column;
@@ -34,7 +34,7 @@ nav {
 	align-items: center;
 	transform: translateY(-50%);
 	z-index: 100;
-	transition: all .3s;
+	transition: all 0.3s;
 	.navbar {
 		position: relative;
 		display: flex;
@@ -43,6 +43,7 @@ nav {
 		border-radius: 100px;
 		background-color: rgba(0, 0, 0, 0.4);
 		transition: all 0.5s;
+		box-shadow: 0 0 20px #000;
 		a {
 			opacity: 0.2;
 			padding: 1.5em 0.7em;
@@ -63,7 +64,7 @@ nav {
 	}
 }
 .hamburger {
-	transform: scale(.7);
+	transform: scale(0.7);
 }
 
 // ---------------------------------------------------
@@ -78,7 +79,7 @@ nav {
 	padding: 1em;
 	height: 100vh;
 	text-align: center;
-	background-image: url('../img/sun-tornado.png');
+	background-image: url('../img/sun-tornado.webp');
 	background-size: cover;
 
 	&__heading {
@@ -114,7 +115,7 @@ nav {
 		position: absolute;
 		bottom: 0%;
 		left: 50%;
-		transform: translate(-50%, -50%);		
+		transform: translate(-50%, -50%);
 		padding: 1em 2em;
 		border: 1px solid $white-color;
 		border-radius: 7px;
@@ -193,6 +194,7 @@ nav {
 		align-items: center;
 		align-self: center;
 		cursor: pointer;
+		z-index: 1;
 		&-link {
 			padding: 0.5em 1em;
 			text-decoration: none;
@@ -204,7 +206,7 @@ nav {
 			transform: scale(0.9);
 			color: $main-color-4;
 		}
-	}	
+	}
 }
 
 .header-cartoon {
@@ -263,7 +265,7 @@ nav {
 		align-items: center;
 		margin-bottom: 4em;
 	}
-	&__box {		
+	&__box {
 		position: relative;
 		margin-bottom: 3em;
 		.fa-circle-xmark {
@@ -327,10 +329,10 @@ nav {
 				box-shadow: 10px 10px 15px #000;
 			}
 			&--active {
-				transform: scale(1.1) 
+				transform: scale(1.1);
 			}
 			&--active2 {
-				transform: scale(1.1) 
+				transform: scale(1.1);
 			}
 		}
 		&_card:hover {
@@ -390,7 +392,6 @@ nav {
 .projects {
 	position: relative;
 	background-color: $main-color;
-	overflow: hidden;
 	h2 {
 		position: absolute;
 		top: 50px;
@@ -403,8 +404,7 @@ nav {
 		left: 0;
 		background-image: url(../img/971.webp);
 		background-position: center;
-		background-attachment: fixed;
-		background-size: contain;
+		background-size: cover;
 		height: 400px;
 		width: 100%;
 		z-index: 0;
@@ -417,16 +417,17 @@ nav {
 		}
 		&-text {
 			position: absolute;
-			top: 40%;
-			padding: 0 4em;
+			top: 25%;
+			padding: 0 2em;
 			text-align: center;
 			p {
-				font-size: 2rem;
-				line-height: 1.5;
+				font-size: 1.2rem;
+				line-height: 1.3;
 			}
 		}
 	}
 	&__hero-img2 {
+		display: none;
 		position: absolute;
 		top: 400px;
 		left: 0;
@@ -436,77 +437,39 @@ nav {
 		z-index: 0;
 	}
 	&__box {
-		margin-left: 5em;
-		padding: 1em 3em;
-		display: grid;
-		gap: 100px;
-		grid-template-columns: repeat(2, 1fr);
-		grid-template-rows: repeat(4, 1fr) 200px;
+		padding: 1em 2em;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-around;
 	}
 	.space {
 		height: 450px;
 	}
-	&__info-box--one {
-		grid-row: 1/2;
-		grid-column: 1/2;
-	}
-	&__project-box--one {
-		grid-row: 1/2;
-		grid-column: 2/3;
-	}
-	&__info-box--two {
-		grid-row: 2/3;
-		grid-column: 1/2;
-	}
-	&__project-box--two {
-		grid-row: 2/3;
-		grid-column: 2/3;
-	}
-	&__info-box--three {
-		grid-row: 3/4;
-		grid-column: 1/2;
-	}
-	&__project-box--three {
-		grid-row: 3/4;
-		grid-column: 2/3;
-	}
-	&__info-box--four {
-		grid-row: 4/5;
-		grid-column: 1/2;
-	}
-	&__project-box--four {
-		grid-row: 4/5;
-		grid-column: 2/3;
-	}
-	&__info-box--five {
-		grid-row: 5/6;
-		grid-column: 1/3;
-	}
+
 	&__info-box {
 		position: relative;
-		&__photo {
-			height: 500px;
-			width: 100%;
-			max-width: 590px;
-		}
+		margin-bottom: 4em;
+		width: 100%;
+		min-width: 200px;
+		height: 500px;
 
 		a.hire-button {
 			position: absolute;
-			// top: 50%;
 			left: 50%;
 			transform: translate(-50%, -50%);
 			padding: 1.5em 1.5em;
 			border: 1px solid $white-color;
 			border-radius: 15px;
 			text-transform: uppercase;
-			font-size: 2rem;
+			font-size: 1.4rem;
 			font-weight: 700;
 			background: none;
 			cursor: pointer;
 			color: $white-color;
 			letter-spacing: 1px;
 			text-align: center;
-			// overflow: hidden;
+			z-index: 1;
 			&::before {
 				background-color: $main-color-4;
 			}
@@ -528,12 +491,12 @@ nav {
 			text-align: center;
 			h3 {
 				margin-bottom: 0em;
-				font-size: 2rem;
+				font-size: 1.5rem;
 				text-transform: uppercase;
 			}
 			.descr,
 			.tech {
-				font-size: 1.5rem;
+				font-size: 1.2rem;
 				line-height: 1.5em;
 			}
 			.tech {
@@ -545,19 +508,20 @@ nav {
 			display: flex;
 			justify-content: space-evenly;
 			align-items: center;
+			column-gap: 1em;
 			button {
-				padding: 1.5em 0;
+				padding: 1em 0;
 				border-radius: 10px;
 				background: none;
 				border: 1px solid #ffffff;
 				cursor: pointer;
 				transition: background-color 0.4s, border 0.4s;
 				a {
-					padding: 1.5em 2.5em;
+					padding: 1em 1em;
 					text-decoration: none;
 					color: $white-color;
 					text-transform: uppercase;
-					font-size: 1.5rem;
+					font-size: 1.2rem;
 					font-weight: 700;
 					i {
 						margin-left: 0.5em;
@@ -575,8 +539,10 @@ nav {
 	}
 	&__project-box {
 		position: relative;
-		margin-left: 60px;
-		width: 600px;
+		margin-left: 0px;
+		margin-bottom: 4em;
+		width: 100%;
+		min-width: 200px;
 		height: 400px;
 		perspective: 800px;
 		cursor: pointer;
@@ -590,16 +556,16 @@ nav {
 			box-shadow: 0 0 15px #000;
 		}
 		&__photo.one {
-			background-image: url('../img/projects/Psychoterapia_1.png');
+			background-image: url('../img/projects/Psychoterapia_1.webp');
 		}
 		&__photo.two {
-			background-image: url('../img/projects/Trainer_1.png');
+			background-image: url('../img/projects/Trainer_1.webp');
 		}
 		&__photo.three {
-			background-image: url('../img/projects/react_1.png');
+			background-image: url('../img/projects/react_1.webp');
 		}
 		&__photo.four {
-			background-image: url('../img/projects/20945385.jpg');
+			background-image: url('../img/projects/20945385.webp');
 		}
 		&__mobile {
 			position: absolute;
@@ -620,17 +586,17 @@ nav {
 			box-shadow: 0 0 15px #000;
 		}
 		&__mobile.one {
-			background-image: url('../img/projects/Psychoterapia_mobile.png');
+			background-image: url('../img/projects/Psychoterapia_mobile.webp');
 		}
 		&__mobile.two {
 			transform: rotateY(-180deg);
-			background-image: url('../img/projects/Trainer_mobile.png');
+			background-image: url('../img/projects/Trainer_mobile.webp');
 		}
 		&__mobile.three {
-			background-image: url('../img/projects/react_mobile.png');
+			background-image: url('../img/projects/react_mobile.webp');
 		}
 		&__mobile.four {
-			background-image: url('../img/projects/20945385.jpg');
+			background-image: url('../img/projects/20945385.webp');
 			transform: rotateY(-180deg);
 		}
 	}
@@ -649,6 +615,24 @@ nav {
 		}
 	}
 }
+.header-icon {
+	&--html {
+		bottom: 450px;
+		left: 20%;
+	}
+	&--css {
+		bottom: 200px;
+		left: 20%;
+	}
+	&--js {
+		bottom: 340px;
+		right: 20%;
+	}
+	&--react {
+		bottom: 80px;
+		right: 20%;
+	}
+}
 
 // ---------------------------------------------------
 .contact {
@@ -659,13 +643,15 @@ nav {
 	height: 100vh;
 	width: 100vw;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: space-around;
 	align-items: center;
+	padding: 2em;
 	background-color: rgba(0, 0, 0, 0.95);
 	z-index: 90;
 	> p {
-		font-size: 2rem;
+		font-size: 1.3rem;
 		text-transform: uppercase;
+		margin-bottom: 1em;
 	}
 }
 .contact__items {
@@ -673,19 +659,23 @@ nav {
 	flex-direction: column;
 	justify-content: space-evenly;
 	align-items: center;
-	padding: 2em;
-	width: 50%;
+	padding: 1em;
+	width: 90%;
 	height: 60%;
 	font-size: 1.6rem;
+	h2 {
+		font-size: 1.8rem;
+	}
 	i {
 		color: $main-color-4;
 	}
 	.item-link {
 		color: $main-color-2;
 		font-weight: bold;
-		font-size: 2rem;
-		padding: 1em 5em;
+		font-size: 1.5rem;
+		padding: 0.2em 2em 1em;
 		text-decoration: none;
+		text-align: center;
 		transition: color 0.4s, transform 0.4s;
 	}
 
@@ -699,9 +689,9 @@ nav {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	width: 70%;
+	width: 80%;
 	text-align: center;
-	font-size: 1.8rem;
+	font-size: 1.5rem;
 	i {
 		color: $main-color-2;
 	}
@@ -725,7 +715,7 @@ nav {
 footer .content {
 	background-color: $main-color-3;
 	color: $main-color;
-	font-size: 2rem;
+	font-size: 1.4rem;
 	font-weight: 700;
 	text-align: center;
 	padding: 2em;
@@ -733,7 +723,6 @@ footer .content {
 
 // ---------------------------------------------------
 
-@import './media';
 
 .fa-circle-xmark {
 	opacity: 0;
@@ -746,6 +735,9 @@ footer .content {
 .vertical {
 	flex-direction: column;
 }
+.nav-top {
+	top: 230px;
+}
 
 .first-box-option {
 	display: flex;
@@ -753,3 +745,5 @@ footer .content {
 	justify-content: space-around;
 	align-items: center;
 }
+
+@import './media';
