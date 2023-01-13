@@ -781,7 +781,7 @@ nav .navbar .show {
   top: 0;
   left: 0;
   width: 100%;
-  height: 140%;
+  height: 120%;
 }
 .about-me__box-img img, .about-me__box-img--two img {
   height: 100%;
@@ -812,8 +812,8 @@ nav .navbar .show {
   letter-spacing: 1px;
   color: #ebecf2;
   transition: transform 0.4s, background-color 0.4s, box-shadow 0.4s, opacity 1s, filter 1s;
-  filter: blur(10px);
-  opacity: 0;
+  filter: blur(6px);
+  opacity: 0.7;
   cursor: pointer;
 }
 .about-me__cards_card--active, .about-me__cards_card--active2, .about-me__cards--two_card--active, .about-me__cards--two_card--active2 {
@@ -866,9 +866,9 @@ nav .navbar .show {
   width: 100%;
 }
 .about-me__box .active-text, .about-me__box--two .active-text {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-family: "Atma", cursive;
-  padding: 2em;
+  padding: 1em;
   text-align: center;
 }
 .about-me__box .fa-user-graduate,
@@ -896,6 +896,7 @@ nav .navbar .show {
 .projects {
   position: relative;
   background-color: #22577E;
+  overflow: hidden;
 }
 .projects h2 {
   position: absolute;
@@ -956,6 +957,7 @@ nav .navbar .show {
   margin-bottom: 4em;
   width: 100%;
   min-width: 200px;
+  max-width: 600px;
   height: 500px;
 }
 .projects__info-box a.hire-button {
@@ -1008,12 +1010,19 @@ nav .navbar .show {
   font-weight: 700;
   letter-spacing: 1px;
 }
+.projects__info-box__text .descr-item {
+  font-size: 1.1rem;
+  text-align: left;
+  align-self: center;
+}
 .projects__info-box .btn-box {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  flex-wrap: wrap;
   -moz-column-gap: 1em;
        column-gap: 1em;
+  row-gap: 1em;
 }
 .projects__info-box .btn-box button {
   padding: 1em 0;
@@ -1041,6 +1050,9 @@ nav .navbar .show {
 .projects__info-box .btn-box button:hover a {
   color: #22577E;
 }
+.projects__info-box--seven {
+  max-width: none;
+}
 .projects__project-box {
   position: relative;
   margin-left: 0px;
@@ -1061,15 +1073,19 @@ nav .navbar .show {
   box-shadow: 0 0 15px #000;
 }
 .projects__project-box__photo.one {
-  background-image: url("../img/projects/Psychoterapia_1.webp");
+  background-image: url("../img/projects/Dream-trip.webp");
+  background-position: left;
 }
 .projects__project-box__photo.two {
-  background-image: url("../img/projects/Trainer_1.webp");
-}
-.projects__project-box__photo.three {
   background-image: url("../img/projects/react_1.webp");
 }
 .projects__project-box__photo.four {
+  background-image: url("../img/projects/Psychoterapia_1.webp");
+}
+.projects__project-box__photo.five {
+  background-image: url("../img/projects/Trainer_1.webp");
+}
+.projects__project-box__photo.six {
   background-image: url("../img/projects/20945385.webp");
 }
 .projects__project-box__mobile {
@@ -1091,16 +1107,20 @@ nav .navbar .show {
   box-shadow: 0 0 15px #000;
 }
 .projects__project-box__mobile.one {
-  background-image: url("../img/projects/Psychoterapia_mobile.webp");
+  background-image: url("../img/projects/dream-mobile1.webp");
 }
 .projects__project-box__mobile.two {
   transform: rotateY(-180deg);
-  background-image: url("../img/projects/Trainer_mobile.webp");
-}
-.projects__project-box__mobile.three {
   background-image: url("../img/projects/react_mobile.webp");
 }
 .projects__project-box__mobile.four {
+  transform: rotateY(-180deg);
+  background-image: url("../img/projects/Psychoterapia_mobile.webp");
+}
+.projects__project-box__mobile.five {
+  background-image: url("../img/projects/Trainer_mobile.webp");
+}
+.projects__project-box__mobile.six {
   background-image: url("../img/projects/20945385.webp");
   transform: rotateY(-180deg);
 }
@@ -1113,8 +1133,12 @@ nav .navbar .show {
   opacity: 0;
 }
 .projects__project-box:hover .projects__project-box__photo.two,
-.projects__project-box:hover .projects__project-box__photo.four {
+.projects__project-box:hover .projects__project-box__photo.four,
+.projects__project-box:hover .projects__project-box__photo.six {
   transform: rotatey(-180deg);
+}
+.projects__project-box {
+  max-width: 600px;
 }
 
 .header-icon--html {
@@ -1134,13 +1158,118 @@ nav .navbar .show {
   right: 20%;
 }
 
+.carousel {
+  position: relative;
+}
+.carousel .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 1.5em;
+  max-width: 600px;
+  height: 400px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+.carousel .card .card-img {
+  width: 100%;
+  max-height: 280px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.carousel .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  padding: 1em;
+}
+.carousel .card-body .card-title {
+  font-size: 1.6rem;
+}
+.carousel .card-body .card-text {
+  font-size: 1.3rem;
+}
+.carousel .btn-box {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  -moz-column-gap: 1em;
+       column-gap: 1em;
+  row-gap: 1em;
+}
+.carousel .btn-box button {
+  padding: 1em 0;
+  border-radius: 10px;
+  background: none;
+  border: 1px solid #ffffff;
+  cursor: pointer;
+  transition: background-color 0.4s, border 0.4s;
+}
+.carousel .btn-box button a {
+  padding: 1em 1em;
+  text-decoration: none;
+  color: #ebecf2;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.carousel .btn-box button a i {
+  margin-left: 0.5em;
+}
+.carousel .btn-box button:hover {
+  border: 1px solid transparent;
+  background-color: #FAFFAF;
+}
+.carousel .btn-box button:hover a {
+  color: #22577E;
+}
+.carousel button.slick-arrow {
+  position: absolute;
+  top: 70%;
+  transform: translateY(-50%);
+  padding: 1em;
+  font-size: 2rem;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.carousel button.slick-arrow.slick-prev {
+  left: 0;
+  z-index: 1;
+}
+.carousel button.slick-arrow.slick-next {
+  right: 0;
+}
+.carousel .slick-dots {
+  display: flex;
+  justify-content: center;
+  padding-left: 4em;
+}
+.carousel .slick-dots li {
+  margin: 0 0.5em;
+  background: #787878;
+  font-size: 2rem;
+  border-radius: 50%;
+}
+.carousel .slick-dots li.slick-active {
+  color: tomato;
+}
+.carousel .slick-dots button {
+  display: none;
+}
+
 .contact {
   display: flex;
   position: static;
   top: 0px;
   left: 0px;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
@@ -1309,7 +1438,7 @@ footer .content {
     justify-content: flex-end;
   }
 }
-@media (min-width: 568px) and (orientation: landscape) {
+@media (min-width: 570px) and (orientation: landscape) {
   .header {
     flex-direction: row;
     flex-wrap: wrap;
@@ -1330,7 +1459,7 @@ footer .content {
     font-size: 2.5rem;
   }
   .about-me__box__active--first {
-    height: 120%;
+    height: 100%;
   }
   .about-me__cards_card, .about-me__cards--two_card {
     width: 100%;
@@ -1412,7 +1541,7 @@ footer .content {
     font-size: 1.2rem;
   }
   .about-me__box__active--first {
-    height: 120%;
+    height: 100%;
   }
   .about-me__box-img img, .about-me__box-img--two img {
     max-width: 900px;
@@ -1542,6 +1671,10 @@ footer .content {
 .projects__info-box__text .tech {
     font-size: 1.6rem;
     line-height: 1.5em;
+  }
+  .projects__info-box__text .descr-item {
+    font-size: 1.3rem;
+    text-align: left;
   }
   .projects__info-box .btn-box button {
     padding: 2em 0;
@@ -1681,12 +1814,11 @@ footer .content {
     display: block;
   }
   .projects__box {
-    margin-left: 5em;
     padding: 1em 3em;
     display: grid;
     gap: 100px;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(4, 1fr) 200px;
+    grid-template-rows: repeat(6, 1fr) 200px;
   }
   .projects__info-box--one {
     grid-row: 1/2;
@@ -1722,6 +1854,22 @@ footer .content {
   }
   .projects__info-box--five {
     grid-row: 5/6;
+    grid-column: 1/2;
+  }
+  .projects__project-box--five {
+    grid-row: 5/6;
+    grid-column: 2/3;
+  }
+  .projects__info-box--six {
+    grid-row: 6/7;
+    grid-column: 1/2;
+  }
+  .projects__project-box--six {
+    grid-row: 6/7;
+    grid-column: 2/3;
+  }
+  .projects__info-box--seven {
+    grid-row: 7/8;
     grid-column: 1/3;
   }
   .projects__info-box {

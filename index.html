@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Atma:wght@300&family=Montserrat:wght@200;400;700&display=swap"
         rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://kit.fontawesome.com/1f8e79f6df.js" crossorigin="anonymous"></script>
 </head>
@@ -88,7 +89,7 @@
                     <div class="about-me__box">
                         <div class="about-me__box-img">
                             <img class="img-rotate" src="./img/foto budowa2.webp"
-                                alt="animowana postać, przedstawiająca autora strony na tle placu budowy">
+                                alt="animowana postać na tle placu budowy">
                         </div>
                         <div class="about-me__box__active about-me__box__active--first">
                             <div class="first-box-option" id="first-tab" style="display:none">
@@ -164,11 +165,9 @@
                 </div>
 
             </div>
-            <!-- <img src="./img/icons/activity (2).svg" class="about-me-icon about-me-icon--one" alt=""> -->
         </section>
 
         <section class="projects" id="projects">
-            <!-- <div class="lime-block lime-block-right"></div> -->
             <div class="wrapper-odd">
                 <h2 class="section-heading">Projekty</h2>
                 <div class="space"></div>
@@ -192,7 +191,124 @@
                 <div class="projects__box">
                     <div class="projects__info-box projects__info-box--one">
                         <div class="projects__info-box__text">
-                            <h3>STRONA INTERNETOWA GABINET PSYCHOTERAPII</h3>
+                            <h3>React App Dream Trip</h3>
+                            <p class="descr">Moja flagowa aplikacja podumowująca całą dotychczasową naukę. Umożliwia ona
+                                zaplanowanie wielu elementów podróży, takich jak wybór dostępnych atrakcji, restauracji
+                                czy sprawdzeniu pogody. Aplikacja została stworzona
+                                za pomącą biblioteki React, z użyciem m.in. React Router, Custom Hooków czy Context
+                                Providera.
+                                Aplikacją korzysta z czterech API - Google Maps, Travel Advisor, OpenWeather oraz
+                                Pixabay. </p>
+                            <p class="tech">Tech: React.js, React Router, Next.js, NPM</p>
+                            <div class="btn-box">
+                                <button><a href="https://my-dream-trip.netlify.app" target="_blank">live <i
+                                            class="fa-solid fa-eye"></i></a> </button>
+                                <button><a href="https://github.com/Grave-Dave/DreamTrip---ReactApp"
+                                        target="_blank">repo <i class="fa-brands fa-github"></i></a> </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="projects__project-box projects__project-box--one">
+                        <div class="projects__project-box__photo one"></div>
+                        <div class="projects__project-box__mobile one">
+
+                        </div>
+                    </div>
+                    <div class="projects__info-box projects__info-box--two">
+                        <div class="projects__info-box__text">
+                            <h3>React App Quizzical</h3>
+                            <p class="descr">Aplikacja internetowa napisana przy użyciu biblioteki
+                                React, w
+                                ramach projektu końcowego modułu React z kursu Frontend Developer Path, platformy
+                                szkoleniowej Scrimba. Aplikacja pozwala na spróbowanie swoich sił w quizie z zakresu
+                                pytań wybranych przez użytkownika w interfejsie. Aplikacja wykorzystuje Open Trivia DB
+                                API. Zbudowana jest komponentów renderowanych warunkowo.</p>
+                            <p class="tech">Tech: React.js, VITE, JS in JSX, SASS, CSS in JS, NPM</p>
+                            <div class="btn-box">
+                                <button><a href="https://my-super-quizz-app.netlify.app" target="_blank">live <i
+                                            class="fa-solid fa-eye"></i></a> </button>
+                                <button><a href="https://github.com/Grave-Dave/Quizzlet" target="_blank">repo <i
+                                            class="fa-brands fa-github"></i></a> </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="projects__project-box projects__project-box--two">
+                        <div class="projects__project-box__photo two"></div>
+                        <div class="projects__project-box__mobile two">
+
+                        </div>
+                    </div>
+                    <div class="projects__info-box projects__info-box--three">
+                        <div class="projects__info-box__text">
+                            <h3>APLIKACJE JAVASCRIPT</h3>
+                            <p class="descr">Aplikacje napisane za pomocą czystego JavaScriptu, do których należą: </p>
+                            <p class="descr-item">
+                                1. Movie Watchlist - aplikacja pozwalająca na zapisanie do swojej listy dowolnego filmu
+                                przy użyciu OMDb API. </p>
+                            <p class="descr-item"> 2. Psinder - wzorowany na popularnej aplikacji randkowej, został
+                                stworzony w oparciu OOP.
+                            </p>
+                            <p class="descr-item"> 3. Color Scheme - generator kolorów bazujący na Color API. Umożliwaja
+                                dobór kolorów na
+                                podstawie wybranych parametrów.</p>
+                        </div>
+                    </div>
+
+                    <div class="projects__project-box projects__project-box--three">
+                        <div class="carousel">
+                            <div class="card">
+                                <img src="./img/projects/Watchlist.webp" class="card-img" alt="projekt watchlist">
+                                <div class="card-body">
+                                    <h5 class="card-title">Movie Watchlist</h5>
+                                    <p class="card-text">Tech: HTML, SASS, JS, NPM, GULP</p>
+                                </div>
+                                <div class="btn-box">
+                                    <button class="btn-apps"><a href="https://grave-dave.github.io/Movie-Watchlist/"
+                                            target="_blank">Watchlist live
+                                            <i class="fa-solid fa-eye "></i></a></button>
+
+                                    <button class="btn-apps"><a href="https://github.com/Grave-Dave/Movie-Watchlist"
+                                            target="_blank">repo
+                                            <i class="fa-brands fa-github "></i></a></button>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="./img/projects/Psinder.webp" class="card-img" alt="projekt watchlist">
+                                <div class="card-body">
+                                    <h5 class="card-title">Psinder</h5>
+                                    <p class="card-text">Tech: HTML, SASS, JS, NPM, GULP</p>
+                                </div>
+                                <div class="btn-box">
+                                    <button class="btn-apps"><a href="https://grave-dave.github.io/Dog-Tinder/"
+                                            target="_blank"> Psinder live
+                                            <i class="fa-solid fa-eye "></i></a></button>
+
+                                    <button class="btn-apps"><a href="https://github.com/Grave-Dave/Dog-Tinder"
+                                            target="_blank">repo
+                                            <i class="fa-brands fa-github "></i></a></button>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <img src="./img/projects/Color-scheme.webp" class="card-img" alt="projekt watchlist">
+                                <div class="card-body">
+                                    <h5 class="card-title">Color-Scheme</h5>
+                                    <p class="card-text">Tech: HTML, SASS, JS, NPM, GULP</p>
+                                </div>
+                                <div class="btn-box">
+                                    <button class="btn-apps"><a href="https://grave-dave.github.io/Color-Scheme/"
+                                            target="_blank">Color live
+                                            <i class="fa-solid fa-eye"></i></a></button>
+
+                                    <button class="btn-apps"><a href="https://github.com/Grave-Dave/Color-Scheme"
+                                            target="_blank">repo
+                                            <i class="fa-brands fa-github "></i></a></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="projects__info-box projects__info-box--four">
+                        <div class="projects__info-box__text">
+                            <h3>STRONA INTERNETOWA <br /> GABINET PSYCHOTERAPII</h3>
                             <p class="descr">W pełni responsywna, napisana od postaw strona internetowa, przeznaczona do
                                 komercyjnego
                                 użytku. Została wykonana przy użyciu Vanilla JS, SCSS (7 - 1), CSS Flexbox i Gulp</p>
@@ -205,15 +321,15 @@
                             </div>
                         </div>
                     </div>
-                    <div class="projects__project-box projects__project-box--one">
-                        <div class="projects__project-box__photo one"></div>
-                        <div class="projects__project-box__mobile one">
+                    <div class="projects__project-box projects__project-box--four">
+                        <div class="projects__project-box__photo four"></div>
+                        <div class="projects__project-box__mobile four">
 
                         </div>
                     </div>
-                    <div class="projects__info-box projects__info-box--two">
+                    <div class="projects__info-box projects__info-box--five">
                         <div class="projects__info-box__text">
-                            <h3>STRONA INTERNETOWA YOUR PERSONAL TRAINER </h3>
+                            <h3>STRONA INTERNETOWA <br /> YOUR PERSONAL TRAINER </h3>
                             <p class="descr">Kolejna napisana od podstaw, responsywna strona internetowa. Wykonana przy
                                 użyciu Vanilla
                                 JS oraz SCSS. Strona wykorzystuje funkcjonalności, takie jak m.in. Intersection
@@ -227,38 +343,13 @@
                             </div>
                         </div>
                     </div>
-                    <div class="projects__project-box projects__project-box--two">
-                        <div class="projects__project-box__photo two"></div>
-                        <div class="projects__project-box__mobile two">
+                    <div class="projects__project-box projects__project-box--five">
+                        <div class="projects__project-box__photo five"></div>
+                        <div class="projects__project-box__mobile five">
 
                         </div>
                     </div>
-                    <div class="projects__info-box projects__info-box--three">
-                        <div class="projects__info-box__text">
-                            <h3>Quizzical</h3>
-                            <p class="descr">Aplikacja internetowa napisana w pełni samodzielnie przy użyciu biblioteki
-                                React, w
-                                ramach projektu końcowego modułu React z kursu Frontend Developer Path, platformy
-                                szkoleniowej Scrimba. Aplikacja pozwala na spróbowanie swoich sił w quizie z zakresu
-                                wiedzy ogólnej, poprzez udzielanie odpowiedzi na pytania jednokrotnego wyboru, które
-                                pobierane są z API. Aplikacja wykorzystuje hooki useState i useEffect, API oraz
-                                zbudowana jest komponentów renderowanych warunkowo.</p>
-                            <p class="tech">Tech: React.js, VITE, JS in JSX, SASS, CSS in JS, NPM</p>
-                            <div class="btn-box">
-                                <button><a href="https://my-super-quizz-app.netlify.app" target="_blank">live <i
-                                            class="fa-solid fa-eye"></i></a> </button>
-                                <button><a href="https://github.com/Grave-Dave/Quizzlet" target="_blank">repo <i
-                                            class="fa-brands fa-github"></i></a> </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="projects__project-box projects__project-box--three">
-                        <div class="projects__project-box__photo three"></div>
-                        <div class="projects__project-box__mobile three">
-
-                        </div>
-                    </div>
-                    <div class="projects__info-box projects__info-box--four">
+                    <div class="projects__info-box projects__info-box--six">
                         <!-- <div class="projects__info-box__photo three"></div> -->
                         <div class="projects__info-box__text">
                             <h3>ANOTHER WEBSITE / APP </h3>
@@ -270,22 +361,20 @@
                             </div>
                         </div>
                     </div>
-                    <div class="projects__project-box projects__project-box--four">
-                        <div class="projects__project-box__photo four"></div>
-                        <div class="projects__project-box__mobile four">
+                    <div class="projects__project-box projects__project-box--six">
+                        <div class="projects__project-box__photo six"></div>
+                        <div class="projects__project-box__mobile six">
 
                         </div>
                     </div>
-                    <div class="projects__info-box projects__info-box--five">
+                    <div class="projects__info-box projects__info-box--seven">
                         <a href="#contact" class="header__btn btn-special-animation hire-button">Skontaktuj się</a>
                     </div>
                 </div>
-                <!-- <img src="./img/icons/activity (2).svg" class="projects-icon projects-icon--one" alt=""> -->
                 <img src="./img/icons/html5.svg" class="header-icon header-icon--html" alt="">
                 <img src="./img/icons/css3-alt.svg" class="header-icon header-icon--css" alt="">
                 <img src="./img/icons/square-js.svg" class="header-icon header-icon--js" alt="">
                 <img src="./img/icons/react.svg" class="header-icon header-icon--react" alt="">
-                <!-- <div class="lime-block lime-block-left"></div> -->
         </section>
         <section class="contact" id="contact">
             <h2 class="section-heading">Kontakt</h2>
@@ -336,6 +425,12 @@
         });
 
     </script>
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="./slicksettings.js"></script>
     <script src="./animate-scroll.js" type="module"></script>
     <script src="./main.js"></script>
 

@@ -84,7 +84,7 @@
 
 // ------------------------------------------------------h+a-OK
 
-@media (min-width: 568px) and (orientation: landscape) {
+@media (min-width: 570px) and (orientation: landscape) {
 	.header {
 		flex-direction: row;
 		flex-wrap: wrap;
@@ -112,7 +112,7 @@
 		&__box {
 			&__active {
 				&--first {
-					height: 120%;
+					height: 100%;
 				}
 			}
 		}
@@ -215,7 +215,7 @@
 		&__box {
 			&__active {
 				&--first {
-					height: 120%;
+					height: 100%;
 				}
 			}
 		}
@@ -369,6 +369,10 @@
 				.tech {
 					font-size: 1.6rem;
 					line-height: 1.5em;
+				}
+				.descr-item{
+					font-size: 1.3rem;
+					text-align: left;
 				}
 			}
 			.btn-box {
@@ -532,12 +536,12 @@
 			display: block;
 		}
 		&__box {
-			margin-left: 5em;
+			// margin-left: 5em;
 			padding: 1em 3em;
 			display: grid;
 			gap: 100px;
 			grid-template-columns: repeat(2, 1fr);
-			grid-template-rows: repeat(4, 1fr) 200px;
+			grid-template-rows: repeat(6, 1fr) 200px;
 		}
 		&__info-box--one {
 			grid-row: 1/2;
@@ -573,8 +577,25 @@
 		}
 		&__info-box--five {
 			grid-row: 5/6;
+			grid-column: 1/2;
+		}
+		&__project-box--five {
+			grid-row: 5/6;
+			grid-column: 2/3;
+		}
+		&__info-box--six {
+			grid-row: 6/7;
+			grid-column: 1/2;
+		}
+		&__project-box--six {
+			grid-row: 6/7;
+			grid-column: 2/3;
+		}
+		&__info-box--seven {
+			grid-row: 7/8;
 			grid-column: 1/3;
 		}
+		
 		&__info-box {
 			height: 100%;
 			margin-bottom: 0;
