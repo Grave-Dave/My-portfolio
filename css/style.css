@@ -1506,6 +1506,11 @@ footer .content {
     font-size: 3rem;
   }
 }
+@media (min-width: 1130px) and (orientation: landscape) {
+  .header__heading {
+    max-width: 600px;
+  }
+}
 @media (min-width: 768px) and (orientation: portrait) {
   .question {
     display: block;
